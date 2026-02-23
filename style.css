@@ -1,22 +1,18 @@
-html, body{
-    /*background-color: rgb(31, 31, 31);*/ /*rgb(236, 229, 204);*/
-    
+html, body{    
     min-height: 100vh;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    /*background-image: url(images/cloud.png)*/;
-    /*padding-bottom: 20px;*/
     background-image: linear-gradient( rgb(31, 31, 31) , rgb(15, 0, 82) 150%  );
 }
 
 :root{
-    --primary-color: rgb(236, 229, 204);
+    --primary-color: rgb(6, 6, 6);
     --secondary-color: #333;
     --tetiary-color: #ddd;
     --white-color: #fff;
     --black-color: #000;
-} 
+}  
 
 body, ul{
     margin: 0;
@@ -34,13 +30,21 @@ nav{
 .navbar{
     background-color: #000;
     overflow: visible !important;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    animation: smooth-light 3s infinite alternate;
 }
 
-.navbar ,title{
+.navbar{
     color: white;
     text-align: left;
     text-decoration: none;
     overflow: hidden;
+}
+
+#title{
+    margin-left: 3vw;
 }
 
 .navbar ul{
@@ -68,13 +72,6 @@ nav{
     border-color: var(--primary-color);
 }
 
-.navbar{
-    position: sticky;       /*makes it stay at top even when scrolling [radial-gradient(#000 , rgb(0, 19, 80) 95% , #f0f);] [box-shadow: 1px 1px 15px orange;]*/
-    top: 0;
-    width: 100%;
-    
-    animation: smooth-light 3s infinite alternate;
-}
 
 @keyframes smooth-light{
     0%{
@@ -87,69 +84,6 @@ nav{
         box-shadow: 0 0 15px transparent;
     }
 
-}
-
-/*.navbar img{
-    height: 50px;
-    width: 50px;
-    border-radius: 100px;
-    
-}
-
-.navbar img:hover{
-    box-shadow: 1px 1px 10px;
-    color: white;
-    transform: translateY(-5px);
-    transition: 0.4s;
-}*/
-
-.dropdown{
-    position: relative;
-    display: inline-block;
-}
-
-.drop-img{
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    border-radius: 100px;
-   }
-
-.drop-img:hover{
-    box-shadow: 1px 1px 10px;
-    color: white;
-    transform: translateY(-5px);
-    transition: 0.4s;
-}
-
-.dropdown-content{
-    display: none;
-    position: absolute;
-    background-color: #000;
-    min-width: 60px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    right: 0;
-    left: auto;
-    top: 100%;
-    margin-top: 0;
-}
-
-.dropdown:hover .dropdown-content{
-    display: flex;
-    flex-direction: column;
-}
-
-
-.dropdown-content a{
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover{
-    background-color: #333;
 }
 
 
@@ -165,26 +99,11 @@ body{
 
 #intro{
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
     
 }
 
-#info p{
-    color: rgb(71, 86, 87);
-    margin-bottom: 25vh;
-}
-
-#Alex_self{
-    color: rgb(255, 180, 40);
-    margin-right: 500px;
-    text-align: center;
-    font-size: larger;
-}
-
-#dots{
-    letter-spacing: 10px;
-}
 
 .profile{
     height: 200px;
@@ -192,6 +111,7 @@ body{
     border-radius: 100px;
     box-shadow: 5px 5px 10px;
     animation: float 3s infinite alternate ease-in-out;
+    margin: 2vw;
 }
 
 
@@ -207,7 +127,12 @@ body{
     }
 }
 
-
+#about{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    color: white;
+}
 
 #skills{
     display: grid;
@@ -234,23 +159,6 @@ body{
 }
 
 @keyframes neon-glow{
-    /*0%{
-        border-color: 4px solid cyan;
-        box-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 40px #0af 0 0 80px #0af;
-        inset: 0 0 15px #f0f;
-    }
-    50%{
-        border-color: #f0f;
-        box-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 40px #f0f 0 0 80px #f0f;
-        inset: 0 0 15px #f0f;
-    }
-
-    100%{
-        border-color: #fbb300;
-        box-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 40px #fbb300 0 0 80px #fbb300;
-        inset: 0 0 15px #f0f;
-    }*/
-
     0%{
         border-color: cyan;
         box-shadow: 0 0 7px #0af, 0 0 15px #0af, 0 0 20px #0af, 0 0 40px #0af;
@@ -273,7 +181,6 @@ body{
 
 
 .skillcard img:hover{
-    box-shadow: 1px 1px 10px;
     transform: translateY(-10px);
 
 }
@@ -322,11 +229,7 @@ body{
     box-shadow: 1px 1px 15px rgb(89, 0, 255) ;
 }
 
-#about{
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
+
 
 form{
     display: flex;
@@ -347,8 +250,8 @@ form input{
 }
 
 form button{
-    background-color: rgba(245, 245, 245, 0.322);
-    border: solid 2px;
+    background-color: transparent;
+    border: 1px solid;
     padding: 10px;
     cursor: pointer;
     border-radius: 50px;
@@ -357,8 +260,8 @@ form button{
 
 form button:hover{
     transform: translateY(-5px);
-    background-color: var(--tetiary-color);
-    color: darkgoldenrod;
+    box-shadow: 1px 1px black;
+    background-color: white;
 }
 
 footer{
@@ -375,6 +278,6 @@ footer p{
     opacity: 50%;
 }
 
- /* *{
-    outline: 1px solid red !important;
-} */
+footer a{
+    color: white;
+}
